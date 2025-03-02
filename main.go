@@ -30,7 +30,7 @@ func main() {
 
 	sshrcPath := sshHome + "/.sshrc"
 	if _, err := os.Stat(sshrcPath); os.IsNotExist(err) {
-		fmt.Println("Usage: sshrc <host> [ssh options]")
+		fmt.Println("Failed to open .sshrc:", err)
 		os.Exit(1)
 	}
 
