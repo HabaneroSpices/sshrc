@@ -111,6 +111,8 @@ func main() {
 	}
 
 	bashrcContent := `
+	  find /tmp -maxdepth 1 -type d -wholename "/tmp/.$USER.sshrc.*" ! -wholename "$SSHHOME"  | xargs -I% rm -r "%"
+		trap "rm -rf $SSHRCCLEANUP; exit" 0
 		if [ -r /etc/profile ]; then source /etc/profile; fi
 		if [ -r ~/.bash_profile ]; then source ~/.bash_profile
 		elif [ -r ~/.bash_login ]; then source ~/.bash_login
