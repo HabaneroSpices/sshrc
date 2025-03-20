@@ -23,7 +23,7 @@ You can use this to set environment variables, define functions, and run post-lo
     
 #### Everything else
 
-    $ wget https://raw.githubusercontent.com/habanerospices/sshrc/master/sshrc && \
+    $ wget https://github.com/HabaneroSpices/sshrc/releases/latest/download/sshrc && \
     chmod +x sshrc && \
     sudo install sshrc /usr/local/bin #or anywhere else on your PATH
 
