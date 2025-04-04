@@ -2,6 +2,8 @@
 @default:
   just --list
 
+setup: build install
+
 build *ARGS:
   go build {{ ARGS }}
 
