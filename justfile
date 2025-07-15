@@ -12,4 +12,4 @@ install:
   sudo install sshrc /usr/local/bin
 
 gh-release VERSION *ARGS:
-  gh release create v{{ VERSION }} --generate-notes {{ ARGS }} './sshrc'
+  gh release create {{ VERSION }} --generate-notes {{ ARGS }} './sshrc'
