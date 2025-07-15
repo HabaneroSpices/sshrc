@@ -111,7 +111,9 @@ func main() {
 	}
 
 	bashrcContent := `
+	  if [ "$(who | grep -c "^$(whoami) ")" -lt 2 ]; then
 		find /tmp -maxdepth 1 -type d -wholename "/tmp/.$USER.sshrc.*" ! -wholename "$SSHHOME"  | xargs -I% rm -r "%"
+		fi
 		trap "rm -rf $SSHRCCLEANUP; exit" 0
 		printf "\033]0; $(hostname --short)\007" > /dev/tty
 		if [ -r /etc/profile ]; then source /etc/profile; fi
